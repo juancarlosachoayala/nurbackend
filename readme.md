@@ -26,7 +26,7 @@ Desarrollado por *Juan Carlos Acho Ayala*
 
 4. Crear el usuario inicial del sistema:
    bash
-   node src/seeds/crearusuario.js
+   node src/seeds/createUserAminSeed.js
    
 
 ---
