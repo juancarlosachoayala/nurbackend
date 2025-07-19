@@ -1,52 +1,91 @@
-----------------------------------
-ESPANHOL
-----------------------------------
+# CRUD BACKEND NUR
 
-## Prueba NODE
+Desarrollado por *Juan Carlos Acho Ayala*  
+🕒 Tiempo estimado de desarrollo: 2 horas
 
-- Crear un CRUD (API REST) en Node para el registro de usuarios.
-- Para la creación de la prueba, utilizar un repositorio falso de usuarios (puede ser en memoria).
+---
 
-## Reglas
+## PRUEBA SPS NODE
 
-- Debe existir un usuario administrador previamente registrado para utilizar la autenticación (no es necesario cifrar la contraseña):
+## 🚀 Instalación y configuración inicial
+
+1. Clonar el repositorio:
+   bash
+   git clone <URL-del-repositorio>
+   
+
+2. Acceder al proyecto:
+   bash
+   cd nombre-de-tu-proyecto
+   
+
+3. Instalar las dependencias:
+   bash
+   npm install
+   
+
+4. Crear el usuario inicial del sistema:
+   bash
+   node src/seeds/crearusuario.js
+   
+
+---
+
+## 📡 API - Endpoints
+
+A continuación se detallan los endpoints disponibles para interactuar con el sistema de usuarios:
+
+---
+
+### 🟢 Crear usuario
+
+- *Método:* POST
+- *URL:* http://localhost:3001/create-update-user
+
+*Request body:*
+json
 {
-  "name": "admin",
-  "email": "admin@spsgroup.com.br",
-  "type": "admin",
-  "password": "1234"
+  "name": "user4",
+  "email": "user4@spsgroup.com.br",
+  "type": "user",
+  "password": "123456"
 }
 
-- Crear una ruta de autenticación (token Jwt).
-- Las rutas de la API solo pueden ser ejecutadas si el usuario está autenticado.
-- Debe ser posible añadir usuarios con los campos: email, nombre, type, password.
-- No debe ser posible registrar un correo electrónico ya existente.
-- Debe ser posible eliminar usuarios.
-- Debe ser posible modificar los datos de un usuario.
+
+---
+
+### 🟡 Actualizar usuario
+
+- *Método:* POST
+- *URL:* http://localhost:3001/create-update-user?user_id={user_id}
+
+*Request body:*
+json
+{
+  "name": "user4",
+  "email": "user4@spsgroup.com.br",
+  "type": "user",
+  "password": "123456"
+}
 
 
-----------------------------------
-PORTUGUÊS
-----------------------------------
+---
 
-# Teste NODE
+### 🔵 Obtener todos los usuarios
 
-- Criar um CRUD (API REST) em node para cadastro de usuários
-- Para a criação do teste utilizar um repositório fake dos usuários. (Pode ser em memória)
+- *Método:* GET
+- *URL:* http://localhost:3001/usersview
 
-## Regras
+---
 
-- Deve existir um usuário admin previamente cadastrado para utilizar autenticação (não precisa criptografar a senha);
-  {
-    name: "admin",
-    email: "admin@spsgroup.com.br",
-    type: "admin"
-    password: "1234"
-  }
+### 🔍 Obtener un usuario por ID
 
-- Criar rota de autenticação (Jwt token)
-- As rotas da API só podem ser executadas se estiver autenticada
-- Deve ser possível adicionar usuários. Campos: email, nome, type, password
-- Não deve ser possível cadastrar o e-mail já cadastrado
-- Deve ser possível remover usuário
-- Deve ser possível alterar os dados do usuário
+- *Método:* GET
+- *URL:* http://localhost:3001/usersview?user_id=1
+
+---
+
+### 🔴 Eliminar usuario
+
+- *Método:* DELETE
+- *URL:* http://localhost:3001/delete-user?user_id=4
